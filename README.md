@@ -36,13 +36,47 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 /* write all the steps invloved */
 
+1.Open quartus II and create New project wizard.
+2. Write the program in Verilog HDL file and run the program.
+3. Download the RTL viewer 
+4. Now open university program VWF and download waveform after the execution.
+
+
+
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+/* Program for flipflops and verify its truth table in quartus using Verilog programming. 
 
+
+module EXP_6(T,clk,Q,Qbar);
+input T,clk;
+output reg Q;
+output reg Qbar;
+initial Q=0;
+initial Qbar=1;
+always @(posedge clk)
+begin 
+Q=(T&(~Q))|((~T)&Q);
+Qbar=~Q;
+end
+endmodule
+
+ Developed by: Janani k
+ 
+ RegisterNumber: 24900523
+ 
 **RTL LOGIC FOR FLIPFLOPS**
+
+
+![Screenshot (21)](https://github.com/user-attachments/assets/4010124a-6a79-49a5-808c-cb11e5ccbc7f)
+
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
+
+![Screenshot (22)](https://github.com/user-attachments/assets/765272ee-bfa3-4f29-a63a-4fdafb5a99fd)
+
+
 **RESULTS**
+
+Thus the Flip flop designed and the truth tables is verified using Quartus software.
